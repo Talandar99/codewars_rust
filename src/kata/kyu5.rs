@@ -14,3 +14,18 @@ pub fn int32_to_ip(int: u32) -> String {
         i32::from_str_radix(&binary_string[24..32], 2).expect("Not a Binary Value"),
     )
 }
+pub fn max_sequence(seq: &[i32]) -> i32 {
+    let mut max_sum = 0;
+
+    for i in 0..seq.len() {
+        let mut temp_sum = 0;
+
+        for j in i..seq.len() {
+            temp_sum = seq[j] + temp_sum;
+            if temp_sum > max_sum {
+                max_sum = temp_sum.clone();
+            }
+        }
+    }
+    max_sum
+}
