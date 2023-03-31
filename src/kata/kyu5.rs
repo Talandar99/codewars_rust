@@ -4,7 +4,7 @@ pub fn make_readable(seconds: u32) -> String {
     let mut _hours: u32 = seconds / 60 / 60;
     format!("{:02}:{:02}:{:02}", _hours, _minutes, _seconds)
 }
-fn int32_to_ip(int: u32) -> String {
+pub fn int32_to_ip(int: u32) -> String {
     let binary_string: String = format!("{int:032b}");
     format!(
         "{}.{}.{}.{}",
